@@ -1,0 +1,107 @@
+
+1. *** 오류메시지에 대한 설명을 하세요 .
+   
+  ㄱ. The local variable age may not have been initialized : 지역변수가 초기화되지 않았습니다. 지역변수에 초기값을 할당하거나 자동으로 할당되도록 해야 합니다.
+  ㄴ. age cannot be resolved to a variable : age 변수를 인식할 수 없습니다. 해당 변수가 선언된 적이 없습니다. ( System.out.println(age); 등의 함수를 사용해 변수 age를 호출하려고 하나, 해당 변수가 선언되지 않은 상황 )
+  ㄷ. The left-hand side of an assignment must be a variable X  : 좌항에는 변수가 와야합니다. ( 값을 좌측에 넣은 상황 )
+  ㄹ. Type mismatch: cannot convert from int to boolean : 자료형이 일치하지 않습니다. int 자료형 값을 boolean 자료형으로 변환할 수 없습니다.
+  ㅁ. Duplicate local variable age : 지역변수 age가 중복선언 되었습니다.
+  
+2. 지역변수( Local Variable ) 에 대해서 설명하세요.
+ : 지역변수는 해당 범위 연산자 안에서만 사용/적용되는 변수입니다.
+
+자바의 변수 종류 3가지: 인스턴스 변수, 스태틱 변수, 지역 변수
+
+3. 자료형( Data Type )에 대해서 설명하세요.
+  1) 정의: 자료형이란 변수에 저장할 자료의 형식을 이르는 말로, 저장할 기억 공간의 크기와 저장할 자료 형식에 대한 정보를 정의합니다.
+  2) 종류
+	: 자료형의 종류는 크게는 기본형과 참조형이 있습니다.
+	기본형은 논리형과 숫자형이 있습니다.
+		논리형에는 boolean이 존재합니다.
+		숫자형은 다시 정수 계열과 실수 계열로 나뉘며,
+			정수형에는 byte, short, char, int, long
+			실수형에는 float, double 이 존재합니다.
+	참조형에는 배열, 클래스, 인터페이스가 존재하는데, 열거형은 컴파일하면 클래스로 저장되므로 크게 분류할 때는 저 3가지로 분류됩니다.
+
+4. 이름, 나이, 학점, 성별 관련 변수를 선언및 초기화하고, 출력하세요. 
+    
+    조건1) printf() 메서드 사용
+    조건2) 출력 형식은    ">이름:"홍길동", 나이:20, 학점:'A', 성별:true" 
+
+public static void main(String[] args) {
+	String name = "홍길동";
+	byte age = 20;
+	char score = 'A';
+	boolean gender = true;
+
+	System.out.printf( ">이름:\"%s\", 나이:%d, 학점:'%c', 성별:%b\n", name, age, score, gender );
+}
+   
+5.  + 연산  결과를 적으세요. 
+    
+   ㄱ. 3 + 5 + 0    →  8
+   ㄴ. 3 + 5 + "0"  → "80" (문자로 연산처리가 되었음)
+   ㄷ. 3 + 5 + '0'   → 56 (정수로 연산처리가 되었음)
+	-> 문자 0의 유니코드 정수 번호는 48임. 8+48=56 이므로 결과는 56.
+ 
+6.  나이와 국어점수를 저장할 변수를 선언하세요 .
+    나이:
+	byte age;
+    국어점수: 
+	1. 0~100일 경우
+		byte kor;
+	2. A~F일 경우
+		char kor;
+
+	나열할 때 사용하는 , (콤마) 연산자를 사용해도 됨
+		byte age, kor;
+		byte age = 10, kor = 50;
+		int a, b, c, d;
+		a = b = c = d = 10;
+               
+7. 개행( 줄바꿈 ) 하는 코딩을 모두 적으세요. 
+   ㄱ. 제어문자 '\n'을 이용한 개행  
+	System.out.print("\n");
+   ㄴ.   println을 이용한 개행
+	System.out.println();
+
+\t의 기능: tab 키를 눌러서 생기는 공간만큼 띄워짐
+	홍길동 90 100 9
+	박민    100 100 100
+여기서 이름 옆의 숫자까지의 빈 공간을 동일하게 맞추는 경우 \t를 사용함 (하지만 tab키도 정해진 공간만큼의 간격을 설정하는 것이기 때문에 tab키 설정을 바꿔서 라인을 맞춰야 한다.)
+
+\b의 기능: backspace. 한글자가 지워짐. (\b의 바로 앞글자가 지워짐)
+ 
+8.  printf(String format, Object...args) 함수의 String format 매개변수의 
+      %Conversion 에 대해서 적으세요. 
+      ㄱ. String 일 때 사용하는 Conversion :  %s
+      ㄴ. char 일 때 사용하는 Conversion :    %c C
+      ㄷ. boolean 일 때 사용하는 Conversion :  %b B
+      ㄹ. byte, short, int, long 일 때 사용하는 Conversion :  %d %o %x
+      ㅁ. float, double 일 때 사용하는 Conversion : %f %e 등등
+
+9.	double money = 1234569.7089
+    소수점 2자리까지 출력
+    세 자리마다 콤마(,) 출력하는 코딩을 하세요 . 
+
+	System.out.printf( "%,.2f" , money );
+
+	반올림하지 않고 출력하고 싶을 때는?
+	소수점 3번째 자리에서 절삭하는 법 생각해보기
+
+	
+ 
+10. char a = 'x';
+    char b;    
+    a 변수의 값을 대문자로 변환시켜서 b 변수에 저장 후 출력하는 코딩을 하세요.
+	char b = 
+	System.out.printf( "%c", b);
+ 
+
+
+
+                    
+																															
+
+
+                    

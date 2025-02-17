@@ -1,0 +1,112 @@
+1. -1/2+2/3-3/4+..+6/7-7/8+8/9=??? 출력하는 코딩을 하세요. ( 반복문 사용 )
+
+	
+
+2. String 을  char[]로 변환해서 출력하는  코딩을 하세요 
+   String msg = "hello world";
+   char [] msgArr;
+   
+	public static void main(String[] args) {
+
+		String msg = "hello world";
+		char[] msgArr = new char [msg.length()];
+		
+		for (int i = 0; i < msgArr.length; i++) {
+			msgArr [i] = msg.charAt(i);
+		} // for i
+		
+		System.out.println(Arrays.toString(msgArr));
+
+	} // main
+   
+2-2. char [] 을 다시 String 변환하는 코딩을 하세요 .
+
+		msg = new String (msgArr);
+
+3. ASCII 을 한 라인에 7개씩 출력하고 
+   각 라인마다 라인번호를 붙이고
+   10개의 라인이 출력 후 "엔터키를 치면 진행" 하도록 
+   코딩하세요.
+   
+	public static void main(String[] args) {
+		
+		int lineNumber = 1, i = 0;
+		while (i < 256) {
+			if(i%7==0) System.out.printf("%d: ", lineNumber++);
+			System.out.printf("[%c]", (char)i);
+			if (++i%7==0) {
+				System.out.println();
+				Scanner sc = new Scanner(System.in);
+				if(lineNumber % 10 == 1) {
+				System.out.print("엔터키를 치면 진행");
+				sc.nextLine();
+				}
+			}
+		}
+
+	} // main
+
+4. 로또 번호를 중복체크 해서 출력하는 코딩을 하세요. 
+   	int [] lotto = new int[6];
+   
+   	public static void main(String[] args) {
+		
+		int [] lotto = new int[6];
+		int index = 0, n;
+		lotto[index] = (int)(Math.random()*45)+1;
+		while (++index<=5) {
+			n = (int)(Math.random()*45)+1;
+			boolean flag = false;
+			for (int i = 0; i < index; i++) {
+				if (lotto[i] == n) {
+					flag = true;
+					continue;
+				}
+			if (!flag) lotto[index]=n;
+			} // for i			
+		} // while
+		
+		System.out.println(Arrays.toString(lotto));
+		
+	} // main
+   
+4-2. 로또 번호 6숫자를 람다식과 스트림을 사용해서 코딩하세요.     
+
+   new Random().ints(1,46).distinct().limit(6).forEach(System.out::println);
+   
+5. break문과 continue 문에 대해서 설명하세요.
+
+	break로 제어문을 빠져나온다. continue는 제어문의 다른 내용을 스킵하고 바로 조건식으로 간다.
+	
+5-2. 두 정수(n,m)을 입력받아서 두 정수 사이의 짝수의 합을 구해서 출력하는 코딩을 하세요.
+
+	
+
+6. int [] m = new int[10];
+  m 배열에 1~100까지의 정수를 중복되지 않게 채워넣고
+  가장 큰 값을 찾아서 출력하세요.
+  
+  	public static void main(String[] args) {
+		
+		int [] m = new int[10];
+		// m 배열에 1~100까지의 정수를. 가장 큰 값 출력
+		
+		m = new Random().ints(1,101).distinct().limit(10).toArray();
+		int max = m[0];
+		for (int i = 0; i < m.length; i++) {
+			max = Math.max(max, m[i]);
+		} // for i
+		System.out.println(Arrays.toString(m));
+		System.out.printf("max=%d", max);
+		
+	} // main
+  
+6-2. 위의 코딩을 람다식과 스트림을 사용해서 코딩하세요. 
+
+	
+
+7. 한 문자를 입력받아서 "대문자", "소문자", "숫자", "한글", "특수문자" 라고
+   출력하는 코딩을 하세요.
+   ( 특수문자는 # ! @ % )
+   
+   char one;   

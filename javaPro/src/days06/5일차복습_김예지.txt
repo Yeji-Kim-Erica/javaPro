@@ -1,0 +1,134 @@
+1. 1~10까지의 합을 출력하는 코딩을 하세요 ( for문 사용 )
+
+	public static void main(String[] args) {
+		
+		int sum = 0;
+		for (int i = 1; i <= 10; i++) {
+			System.out.printf("%d+", i);
+			sum += i;
+		} // for i
+		System.out.printf("\b=%d", sum);
+		
+	} // main
+
+2. 1~10까지의 합을 출력하는 코딩을 하세요 ( while문 사용 )
+
+	public static void main(String[] args) {
+		
+		int sum = 0;
+		int i = 0;
+		while (i++ < 10) {
+			System.out.printf("%d+", i);
+			sum += i;
+		} // for i
+		System.out.printf("\b=%d", sum);
+		
+	} // main
+
+3. 국어점수를 입력받아서 수우미양가 출력( if문 사용 )
+
+	public static void main(String[] args) {
+		
+		System.out.print("국어점수 입력 : ");
+		Scanner sc = new Scanner(System.in);
+		int score = sc.nextInt();
+		String grade = null;
+		
+		if (score >= 90 && score <= 100) grade = "수";
+		else if (score >= 80) grade = "우";
+		else if (score >= 70) grade = "미";
+		else if (score >= 60) grade = "양";
+		else grade = "가";
+		
+		System.out.printf("국어점수 : %d, %s", score, grade);
+		sc.close();
+		
+	} // main
+ 
+4. 국어점수를 입력받아서 수우미양가 출력( switch문 사용 )
+
+	public static void main(String[] args) {
+		
+		System.out.print("국어점수 입력 : ");
+		Scanner sc = new Scanner(System.in);
+		int score = sc.nextInt();
+		String grade = null;
+		
+		switch (score/10) {
+		case 10:
+		case 9:
+			grade = "수";
+			break;
+		case 8:
+			grade = "우";
+			break;
+		case 7:
+			grade = "미";
+			break;
+		case 6:
+			grade = "양";
+			break;
+			
+		default:
+			grade = "가";
+			break;
+		} // switch
+		
+		System.out.printf("국어점수 : %d, %s", score, grade);
+		sc.close();
+		
+	} // main
+
+5. 로또 번호 6개를 출력하는 코딩을 하세요. 
+
+	public static void main(String[] args) {
+		
+		System.out.print("로또번호 : ");
+		for (int i = 1; i <= 6; i++) {
+			System.out.printf("%d ", (int) (Math.random()*45)+1);
+		} // for i
+		
+	} // main
+
+6. 14 <=    <= 87 사이의 정수 3개 출력하는 코딩을 하세요 . 
+
+	public static void main(String[] args) {
+		
+		System.out.print("14 ~ 87 사이의 정수 3개 : ");
+		for (int i = 1; i <= 3; i++) {
+			System.out.printf("%d ", (int) (Math.random()*74)+14);
+		} // for i
+		
+	} // main
+
+	- 반복횟수가 정해져 있을 때: for문
+	- 횟수가 아니라 조건이 정해져 있을 때: while문
+ 
+7. 가위 바위보 게임  구현.
+
+	public static void main(String[] args) {
+		
+		System.out.print("가위바위보 게임을 시작합니다!\n가위(1), 바위(2), 보(3) 중 하나를 입력하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		int user = sc.nextInt(), computer = (int) (Math.random()*3)+1;
+		
+		System.out.printf("플레이어: %s(%d), 컴퓨터: %s(%d)\n",
+						   user==1?"가위":user==2?"바위":"보", user, computer==1?"가위":computer==2?"바위":"보", computer);
+		
+		switch (user - computer) {
+		case 1:
+		case -2:
+			System.out.println("플레이어의 승리");
+			break;
+		case 0:
+			System.out.println("무승부");
+			break;
+
+		default:
+			System.out.println("컴퓨터의 승리");
+			break;
+		} // switch
+		
+	} // main
+	
+	

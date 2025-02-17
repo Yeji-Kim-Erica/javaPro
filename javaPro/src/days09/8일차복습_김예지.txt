@@ -1,0 +1,83 @@
+1. 년도를 매개변수로 받아서 윤년, 평년을 boolean 형으로 반환하는 메서드만 선언하세요
+ (  치윤법 사용 ) 
+ 
+ 	public static boolean isLeapYear(int year) {
+		return year%4==0 && year%100==0 || year%400==0;
+	}
+
+2. 1 ~ n 까지의 합을 구해서 반환하는   [재귀함수]를 선언하세요. 
+
+	public static int recursive(int n) {
+		if (n == 1) return 1;
+		else return n + recursive(n-1);
+	}
+ 
+3. 로또 중복체크는 하는 isDuplicateLotto 함수를 선언하세요. ( 조건 잘 보세요 )
+     ( 조건 : 중복되면 true를 반환,  중복되지 않으면 false 반환)
+     
+	public static boolean isDuplicateLotto(int[] lotto, int index, int n) {
+		boolean flag = false;
+		for (int i = 0; i < index; i++) {
+			if (lotto[i] == n) {
+				flag = true;
+				break;
+			} // if
+		} // for i
+		return flag;
+	}
+
+4. 오버로딩( Overloading) 에 대해서 설명하세요 . 
+
+	오버로딩이란, 이미 선언된 메서드와 동일한 메서드 명을 사용해 중복으로 메서드를 선언하는 것을 말합니다.
+	중복함수의 선언을 위해서는 기존 메서드와 매개변수의 타입이 다르거나 매개변수의 개수가 달라야 합니다.
+
+5. ┌      10개 항의 합     ┐을 아래와 같이 출력하는 코딩을 하세요.    
+   1+2+4+7+11+16+22+29+...=???      
+   
+	public static void main(String[] args) {
+		
+		int sum = 0, term = 1;
+		
+		for (int i = 0; i < 10; i++) {
+			term += i;
+			System.out.printf("%d+", term);
+			sum += term;
+		} // for i
+		
+		System.out.printf("\b=%d\n", sum);
+		
+	} // main
+
+6. 1~100 까지의 소수의 합
+   1+2+3+5+7+...97=???    
+   
+public class Ex01 {
+
+	public static void main(String[] args) {
+		
+		int sum = 0;
+		
+		for (int i = 2; i <= 100; i++) {
+			if (isPrimeNum(i)) {
+				System.out.printf("%d+", i);
+				sum += i;
+			}
+		} // for i
+		
+		System.out.printf("\b=%d\n", sum);
+		
+	} // main
+
+	private static boolean isPrimeNum(int i) {
+		boolean flag = false;
+			for (int j = 2; j <= i/2; j++) {
+				if (i / j > 0) {
+					flag = true;
+					break;
+				} // if
+			} // for j
+		return !flag;
+	}
+	
+} // class
+   
