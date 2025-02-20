@@ -1,6 +1,6 @@
 package programmers;
 
-class Solution {
+class Solution_answerForm {
 
 	
 	
