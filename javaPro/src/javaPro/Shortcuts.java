@@ -31,6 +31,7 @@ public class Shortcuts {
 		 * Toggle Breakpoint : Ctrl + Shift + B
 		 * 디버깅 : breakpoint 잡고 F11 -> F6 누르면 다음 위치로 넘어감
 		 * 메서드 선언식으로 이동 : Ctrl + 메서드 위에 마우스 올리고 우클릭
+		 * private getter setter: Alt + Shift + S
 		 * 
 		 */
 		

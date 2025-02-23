@@ -1,0 +1,173 @@
+1. 용어 정리
+  1) 객체 지향적 프로그래밍(OOP)
+	: 객체들을 모아서 프로그램을 완성하는 것을 객체 지향적 프로그래밍이라고 한다.
+  2) 객체: 클래스를 자료형으로 선언된 참조변수
+	: 사전적 의미는 실제로 존재하는 유형의 물건이나 무형의 개념이다.
+	프로그래밍에서는 클래스에 의해 만들어진 것들을 지칭한다.
+  3) 클래스    : 객체의 설계도.
+  4) 인스턴스  : new 연산자로 heap 영역에 생성된 실제 객체.
+  5) 인스턴스화 : new 클래스명();
+  6) 객체의 구성요소 : 속성과 기능. 프로그래밍에서는 속성 부분을 필드, 기능 부분을 메소드라 지칭한다.
+  7) 멤버 : 객체의 구성요소.
+  8) 멤버변수: 필드 영역에 생성된 변수들을 멤버변수라고 한다.
+  9) 멤버함수: 메소드들을 말한다.
+  10) 필드: 객체의 속성 정보를 위한 공간. 클래스 안에서 메서드 바깥 부분을 말한다.
+  11) 메서드  : 객체의 기능 정보를 위한 공간. 클래스 안에서 함수로 선언되는 부분이다.
+  12) 변수 : 값을 변경할 수 있는 기억공간
+      상수 : 값을 변경할 수 없는 기억공간
+      리터럴 : 
+  13) 참조변수: 참조변수는 참조할 주소값을 저장하는 변수를 말한다.
+  
+2. 클래스의 특징( OOP의 특징 )에 대해서 설명하세요.
+	1) 캡슐화(은닉화)
+		: 필드와 메소드를 하나의 묶음으로 캡슐화해 클래스를 만든다.
+		이렇게 캡슐화한 내용을 외부에서 접근이 가능하게 할 것인지 접근제한자(접근지정자)를 이용해 결정할 수 있다.
+		외부 접근을 제한함으로써 외부의 사용자가 잘못된 이용으로 객체를 손상시키는 것을 막을 수 있다.
+		클래스 내부의 내용을 외부에 공개하지 않고 숨긴다는 의미에서 은닉화라고도 부른다.
+	
+	2) 상속
+		: 부모 객체의 속성과 기능을 자식 객체에 상속시킬 수 있다.
+		상속을 통해 코드 작성 시간을 단축할 수 있으며 유지, 보수가 더욱 용이해진다.
+		이는 부모객체의 코드들을 자식객체에 다시 작성할 필요가 없기 때문이다.
+		부모객체의 코드가 수정되면 그 부모객체에게 상속을 받은 자식객체들에 한해 해당 내용이 자동적으로 반영된다.
+	
+	3) 다형성 
+	4) 추상화 
+  
+3. 클래스의 설계 과정에 대해서 설명하세요. 
+	1) 객체의 구성 요소(속성, 기능)를 파악해 목록 작성
+	2) 클래스 생성
+	3) 파악한 목록을 토대로 필드와 메소드에 해당 내용 작성
+	4) 객체 생성 후 실행
+	5) 오류를 파악해 수정
+	6) 기능 추가 및 확장, 유지와 보수를 지속
+    
+4. NullPointerException 예외(에러)는 언제 발생하는 가 ? 
+	: 객체를 생성했으나 인스턴스화를 하지 않아서 해당 객체에 할당된 인스턴스 주소값이 null일 때
+     
+5. 클래스의 선언 형식
+	[접근지정자] [기타제어자] class 클래스명 [extends 부모클래스][...] {
+	필드
+	메소드
+	}
+     
+6.   클래스 앞의 접근지정자의 종류에 대해서 설명하세요.   
+	- public: 패키지 내/외부 모두에서 참조, 상속 가능
+	- default(package): 패키지 내부에서 참조, 상속 가능
+	- protected: 패키지 내부에서 참조, 상속 가능 + 패키지 외부에서 상속 가능
+	- private: 해당 파일 내부에서만 사용 가능
+6-2. 멤버 앞의 접근지정자의 종류에 대해서 설명하세요.
+   	- public
+	- default(package)
+	- protected
+	- private
+7. 클래스 선언할 때 기타제어자 종류에 대해서 설명하세요.
+	- abstract (추상클래스)
+	- final (최종클래스)
+	- static: 중첩 클래스 선언할 때 사용
+  
+8. 클래스(객체) 복사 / 클래스(객체) 복제에 대해서 설명하세요.  
+클래스(객체) 복사: heap영역에 이미 생성되어있는 인스턴스의 주소값을 불러오는 것. 해당 인스턴스의 데이터를 이용, 수정 가능
+클래스(객체) 복제: 이미 생성되어있는 인스턴스의 내용과 동일한 내용으로 새로운 인스턴스를 heap 영역에 생성하는 것.
+ 
+9. 클래스(객체) 배열 에 대해서 설명하세요.
+	동일한 클래스 자료형을 가진 객체들을 메모리상에 나열하는 것.
+	나열할 공간의 주소를 배열변수에 저장함으로써 객체들을 나열할 공간을 생성할 수 있음.
+
+10.  선언되는 위치를 기준으로 변수 구분하고, 생성시기, 소멸시기에 대해서 설명하세요.
+	- 인스턴스 변수: 클래스 안, 메소드 바깥인 필드에 선언되는 변수
+	- 클래스 변수: 클래스 안에 선언되면서 기타제어자로 static이 붙어있는 변수
+	- 지역변수: 메소드, 초기화선언, 생성자 안에 선언되는 변수
+       
+11. 3 반의 30명의 학생의 성적 관리
+    Student 클래스를 선언 후 
+    클래스 배열을 사용해서 처리하세요
+    ( 입력, 성적 처리, 출력 )       
+
+package days15;
+
+import java.io.IOException;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * @author 김예지
+ * @date 2025. 2. 21.
+ * @subject
+ * @content
+ */
+
+class Student{
+	String name;
+	int kor, eng, mat, tot, rank, wrank;
+	double avg;
+}
+
+public class Ex01 {
+
+	public static void main(String[] args) throws IOException {
+		
+		Student[][] students = new Student[3][];
+		int group, no = 0;
+		char con = 'y';
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		do {
+			System.out.print("> 정보를 입력할 학생의 반을 입력하세요 : ");
+			group = scanner.nextInt()-1;
+			
+			students[group][no].name = getName();
+			students[group][no].kor = getScore();
+			students[group][no].eng = getScore();
+			students[group][no].mat = getScore();
+			students[group][no].tot = students[group][no].kor + students[group][no].eng + students[group][no].mat;
+			students[group][no].avg = (double) students[group][no].tot / 3;
+			students[group][no].rank = 1;
+			students[group][no].wrank = 1;
+			
+			no = students[group].length;
+			
+			System.out.print("계속 입력하시려면 'y'를 입력하세요 : ");
+			con = (char) System.in.read();
+			System.in.skip(System.in.available());
+		} while (Character.toUpperCase(con)=='Y');
+		
+		for (int i = 0; i < students.length; i++) {
+			for (int j = 0; j < students.length; j++) {
+				
+			} // for j
+		} // for i
+		
+	} // main
+
+	private static int getScore() {
+		return (int)(Math.random()*101);
+	}
+
+	private static String getName() {
+		char[] letter1 = {'가','나','다','마','바','사','아','자','하'};
+		int[] letter2 = {0, 28, 112, 224, 364}; // 모음(ㅏㅐㅓㅗㅜ)
+		int[] letter3 = {1,4,16,17,21}; // 자음받침(ㄱㄴㅁㅂㅇ)
+		
+		char[] nameArr = new char[3];
+		Random rnd = new Random();
+		
+		for (int i = 0; i < nameArr.length; i++) {
+			char l1 = letter1[rnd.nextInt(letter1.length)]; // 시작하는 자음
+			int l2 = letter2[rnd.nextInt(letter2.length)]; // 모음
+			int l3 = letter3[rnd.nextInt(letter3.length)]; // 자음 받침
+			nameArr[i] = (char) (l1 + l2
+								+ ((l1=='아')? letter3[rnd.nextInt(letter3.length-1)]
+								: ((l2==28||l2==224||l2==364)?0:l3)));
+		}
+
+		String name = new String(nameArr);
+		return name;
+	}
+	
+}
+
+
+
+

@@ -1,3 +1,4 @@
+
 package days14;
 
 /**
@@ -41,8 +42,8 @@ public class Ex03 {
 		 *   인스턴스                                 myCar
 		 *   [name][speed][wc][메주소]                변수
 		 *   0x100                                   지역변수
-		 *                                          참조변수
-		 *                                          객체명
+		 *                                           참조변수
+		 *                                           객체명
 		 *                                          
 		 *                                          
 		 *               [dispCarInto()]
