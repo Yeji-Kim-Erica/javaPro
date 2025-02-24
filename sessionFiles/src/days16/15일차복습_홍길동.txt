@@ -1,0 +1,78 @@
+1. private로 선언된 필드에 접근한 방법에 대해서 설명하세요.
+   필드 - 클래스 멤버 변수
+   private  -  클래스 내에서만 접근 가능.   
+   private int kor;   0<= ~ <=100   
+   getter/ setter   읽기전용, 쓰기전용 
+
+2. 기본형/참조형 매개변수와 기본형/참조형 반환타입에 대해서 설명하세요.  ( 개념 )
+   int disp(int a);
+   MyPoint disp(MyPoint p); // 클래스 복사
+
+3. 생성자에 대해서 설명하세요.
+   1. 
+   2. 
+   3. 
+   4. 
+   5. 
+   6. 
+   7.
+   8. 
+   9. 
+   10. 
+
+4. this 키워드에 대해서 설명하세요.
+   정의 -
+   3가지 용도 -
+
+5. 아래 코딩을 클래스( 객체) 배열 초기화를 사용해서 코딩하세요 
+		Student s1 = new Student();
+		Student s2 = new Student();
+		Student s3 = new Student();
+		
+		// 1. 클래스 배열
+		Student [] s = new Student[3];
+		s[0] = new Student();
+		s[1] = new Student();
+		s[2] = new Student();
+		
+		// 2. 클래스( 객체) 배열 초기화
+		Student [] s = {
+			new Student(),
+			new Student(),
+			new Student()
+		};
+
+6. 객체 복사(copy)와 객체 복제(clone)에 대해서 설명하세요.. 	
+    Tv t1 = new Tv();
+    Tv t2 = t1;
+    
+    Tv t3 = new Tv();
+    t3.필드값 = t1.필드값;	
+
+7. 에러 메시지 : The constructor System() [is not visible] 에 대해서 설명하세요.
+   System 클래스의 default constructor의 접근 지정자
+   System s = new System();
+
+8. [static 키워드]에 대해서 설명하세요.
+   Save{
+     private static double rate ;
+   }
+ 
+   static 필드  == 클래스 변수 == 공유변수
+   static 메서드 ==  setter, getter
+       ㄴ 
+   
+   static 클래스 - 내부 클래스 X 
+
+9. "오버로딩"에 대해서 설명하세요.
+    중복함수
+    void  drawLine();
+    void  drawLine(50);
+    void  drawLine(30, "^");
+ 
+10. 아래 두 문자열의 대소문자 구분 없이, 순서 상관 없이 같은 문자여부를 체크하는 코딩을 하세요. 
+	String n = "keNik";   
+	String m= "kKnie";    
+
+
+
