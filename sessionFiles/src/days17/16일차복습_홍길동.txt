@@ -1,0 +1,73 @@
+1. 필드(멤버변수)를 초기화 하는 방법 및 우선 처리 순위에 대해서 설명하세요
+   1) 명시적 초기화
+   2) 초기화 블럭
+   3) 생성자
+   class A{   
+      int age = 100; // 1)
+      {
+         //  인스턴스 초기화 블럭     객체 생성시 마다 호출된다.
+      }
+      static{
+         // static 초기화 블럭         1번 실행
+      }
+   }
+
+2. 클래스들 간의 관계에 대해서 설명하세요 .
+ 1)  소속관계  has-a 관계
+     Car - Engine 클래스 간의 관계     
+ 2)  상속관계  is-a 관계     
+ 
+3. 상속(inheritance)에 대해서 설명하세요 
+  ㄱ. 정의 : 기존 클래스 -> 새로운 클래스 선언  
+  ㄴ. 장점 :  
+  ㄷ. 선언형식 :
+  class 클래스명 extends 부모,상위,기초,super 클래스 
+   
+4. 모든 클래스의 최상위 부모클래스는 ? java.lang.Object
+
+5. 오버로딩(overload)과 오버라이딩(override)에 대해서 설명하세요 .
+   drawLine()                       재정의 함수
+   drawLine(int)
+   drawLine(int, String)
+   중복함수
+
+6. this와 super 키워드에 대해서 설명하세요 . 
+
+7. 단일 상속과 다중 상속에 대해서 설명하세요 .
+   extends 부모1, 부모2 X
+   인터페이스 사용 
+   
+8. @Override 애노테이션(Annotation)에 대해서 설명하세요.
+   재정의함수 위에 @Override 를 붙였었다.
+   
+9. [오버라이딩 조건]에 대해서 설명하세요 .
+
+10. final 키워드에 대해서 설명하세요.
+    final class 클래스 선언
+    final 메서드 앞 - 오버라이딩을 할 수 없는 최종 메서드
+    final 필드
+    final 지역변수 \
+    
+    class A{
+       // 필드 앞에 
+       private final int count;
+    }
+    
+
+11. 클래스들 간의 형변환 (조건:  상속 관계 ) 
+    ㄱ. 업캐스팅( upcastring)과 
+    ㄴ. 다운 캐스팅( downcastring )에 대해서 설명하세요.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
