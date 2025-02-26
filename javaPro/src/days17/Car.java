@@ -14,7 +14,7 @@ public class Car {
 	String name;
 	String gearType;
 	int door;
-	// 인터페이스
+	// 인터페이스 선언 -> 디형성으로 인해 범용성이 좋아짐
 	private Engine engine;
 	
 	// 결합력의 높고 낮음을 결정하는 기준
@@ -31,23 +31,23 @@ public class Car {
 	}
 
 	// 생성자
-	Car() { // 디폴트 생성자
+	public Car() { // 디폴트 생성자
 	}
 	
-	Car(Engine engine) { // 매개변수 다형성
+	public Car(Engine engine) { // 매개변수 다형성
 		this.engine = engine;
 	}
 	
 	// 메소드
-	void speedUp(int fuel) {
+	public void speedUp(int fuel) {
 		this.engine.moreFuel(fuel);
 	}
 	
-	void speedDown(int fuel) {
+	public void speedDown(int fuel) {
 		this.engine.lessFuel(fuel);
 	}
 	
-	void stop() {
+	public void stop() {
 		this.engine.stop();
 	}
 	

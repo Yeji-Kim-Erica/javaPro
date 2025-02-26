@@ -1,0 +1,102 @@
+1. "싱글톤 클래스"를 구현하는 방법에 대해서 설명하세요...
+   [싱글톤 패턴]
+    ㄴ 애플리케이션에서 오직 1개만 객체(인스턴스)를 생성하는 패턴
+    ㄴ 구현 방법
+       1) private 생성자 선언 - 외부에서 new 객체 생성할 수 가 없다.
+       2) private static 필드 선언 -   private static volatile  A   obj;
+       3) public  synchronized   A  getInstance(){   // 메서드 동기화
+           if( obj == null )
+               
+              obj = new A();
+              
+           return obj;
+       }
+       4) 멀티스레드 안전
+
+2. instanceof 연산자에 대해서 설명하세요.
+   ㄴ 설명 : 객체가 어떤 클래스 타입인지 여부 true/false 
+   ㄴ 사용법
+        객체명 instanceof 클래스타입
+   ㄴ 주의할점
+      A
+      B
+      C
+      
+      C obj = new C();
+      if ( obj instanceof C  true   자식타입 부터 체크하는 것이 주의할점.
+      else if( obj instanceof B  true
+      else if( obj instanceof A  true
+      
+ 
+3. [매개변수 다형성]에 대해서 설명하세요 .
+   ㄴ 다형성 정의
+   ㄴ 매개변수 
+   ㄴ 매개변수 다형성 설명.
+      업캐스팅
+      E e1 = new E();
+      E e2 = new R();
+      E e3 = new S();
+      E e4 = new T();
+      
+      e1.getPay();  실제 객체의 급여계산..
+      e2.getPay();
+      e3.getPay();
+      e4.getPay();
+                  // R, S, T  업캐스팅
+      급여출력메서드(E e){  // 매개변수 다형성.
+         e.getPay();
+      }
+      
+      /*
+      급여출력메서드(E e){
+      }
+      급여출력메서드(R e){
+      }
+      급여출력메서드(S e){
+      }
+      급여출력메서드(T e){
+      }
+      */
+   
+ 
+4. [] 대괄호 안에 있다. 없다 골라서 적으세요.
+  1) 메서드에 static과 abstract를 함께 사용할 수 [  X  ].
+              static 키워드   : 클래스메소드(정적,static)
+              abstract 키워드 : 추상메소드, {} 몸체가 구현이 안된 불완전한 메소드
+                                물려 받은 자식이 반드시 재정의해서 사용하라는 의미. 
+               
+  2) 클래스에 static과 final을 동시에 사용할 수 [ X ]. 
+     static class X   - 중첩클래스(내부 클래스 ) 선언 
+     final class      - 최종(마지막) 클래스 선언 
+     
+     public class A{
+        // 내부(inner) 클래스 == 중첩클래스
+        public static final class B{
+        }
+     }
+      
+  3) abstract메서드의 접근 제어자가 private일  수 [ X ]. 
+  
+  4) 메서드에 private과 final을 같이 사용할 필요 [ X ].
+      final 메서드 : 재정의 할 수 없는 메소드
+      private  메소드 : 해당 클래스 안에서만 호출되는 메소드
+                       외부 공개 X
+  
+5. 클래스(OOP)의 특징에 대해서 상세히 설명하세요.
+   1) 캡/은
+   2) 상
+   3) 다
+   4) 추
+ 
+6. abstract 키워드에 대해서 설명하세요.
+ 
+7. 인터페이스(interface) 에 대해서 상세히 설명하세요.
+  ㄱ. 정의
+  ㄴ. 상속
+  ㄷ. 구현
+  ㄹ. 특징
+  :
+
+
+
+

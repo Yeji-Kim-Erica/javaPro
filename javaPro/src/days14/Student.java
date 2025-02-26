@@ -17,4 +17,10 @@ public class Student {
 		return String.format("%2d번\t%s\t%d\t%d\t%d\t%d\t%.2f\t%d\t%d\t%d\n",
 				no, name, kor, eng, mat, tot, avg, rank, grank, wrank);
 	}
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", no=" + no + ", kor=" + kor + ", eng=" + eng + ", mat=" + mat + ", tot="
+				+ tot + ", rank=" + rank + ", grank=" + grank + ", wrank=" + wrank + ", avg=" + avg + "]";
+	}
 }
