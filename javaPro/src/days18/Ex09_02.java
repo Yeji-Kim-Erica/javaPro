@@ -17,7 +17,8 @@ public class Ex09_02 {
 		String fileName = "C:\\Class\\JavaClass\\javaPro\\src\\days17\\16일차복습_김예지.txt";
 		int one;
 		try (FileReader reader = new FileReader(fileName);) {
-			// try 옆 () 안에서 생성하면 실행문들이 다 끝난 후 자동으로 파일이 닫힌다
+			// try 옆 () 안에서 생성하면 실행문들이 다 끝난 후 자동으로 파일이 닫힌다.
+			// -> try~with~resources문
 			
 			while ((one = reader.read()) != -1) {
 				System.out.printf("%c", (char)one);

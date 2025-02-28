@@ -41,6 +41,7 @@ public class Ex03_02 {
 		System.out.println(InstanceClass.COUNT);
 		System.out.println(StaticInner.COUNT);
 		System.out.println(StaticInner.cv);
+		// System.out.println(LocalInner.COUNT); (불가능)
 		
 	} // main
 	

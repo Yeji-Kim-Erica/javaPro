@@ -1,13 +1,24 @@
 package programmers;
 
-class Solution {
-    public int solution(int[] array, int n) {
-        int answer = 0;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         
-        for (int i : array) {
-			if(array[i]==n) answer++;
-		}
+        String result = null;
+        switch (n%2) {
+		case 0:
+			result = "even";
+			break;
+
+		case 1:
+			result = "odd";
+			break;
+		} // switch
         
-        return answer;
+        System.out.printf("%d is %s", n, result);
+        
     }
 }

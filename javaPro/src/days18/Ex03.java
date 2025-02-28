@@ -72,6 +72,7 @@ class Outer{
 			
 		}
 	}
+	
 	// 메서드
 	void disp() {
 		
@@ -81,5 +82,4 @@ class Outer{
 		
 	}
 
-	// 생성자
 }

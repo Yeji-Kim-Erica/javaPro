@@ -36,7 +36,6 @@ public class Ex05_04 {
 
 		// 예외가 발생할 것 같은 코드블럭을 잡아서 try~catch문으로 감싼다.
 		// 다중 catch 블럭을 사용할 때는 자식 Exception catch 블럭 먼저 코딩한다.
-		// 이 페이지 강사님 페이지와 비교해서 빠진 부분 없는지 확인
 
 	} // main
 

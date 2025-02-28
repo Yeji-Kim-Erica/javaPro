@@ -30,9 +30,10 @@ public class Ex05_03 {
 //				} // try~catch
 			} catch (ArithmeticException e) {
 				i--; // 총 10번 값이 나오게 하기 위해
+				// System.out.println(e.toString());
 			} catch (ArrayIndexOutOfBoundsException e) { // 다중 catch 블럭
 				i--;
-				m = Arrays.copyOf(m, m.length+1);
+				m = Arrays.copyOf(m, m.length+5);
 				// System.out.println("배열크기 부족으로 출력 및 저장 X");
 			} catch (Exception e) {
 				// 모든 예외처리 코딩..

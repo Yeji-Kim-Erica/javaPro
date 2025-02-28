@@ -21,7 +21,7 @@ public class Ex05 {
 		 	2) 실행 오류 == 런타임 오류 (Runtime Error)
 		 		(예) java.lang.NullPointerException
 		 		int[] m = null;
-		 		m = new int[10]; // 이 한줄을 개발자가 추가함으로써 예외처리를 함
+		 		m = new int[10]; // 이 한줄을 개발자가 추가함으로써 해결
 		 		m[0] = 100;
 		 		System.out.println(m[0]);
 		 			1) 에러(Error): 복구할 수 없는 심각한 오류
