@@ -22,7 +22,7 @@ public class Assignment {
 		// 문자열 길이 8~15사이
 		
 		String password = ""; // 비밀번호 입력 샘플: 1aA@2bB!
-		String regex = "(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*_])[A-Za-z\\d!@#$%^&*_]{8,15}";
+		String regex = "(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*_])[\\w!@#$%^&*]{8,15}";
 		int count = 1;
 		Scanner scanner = new Scanner(System.in);
 		

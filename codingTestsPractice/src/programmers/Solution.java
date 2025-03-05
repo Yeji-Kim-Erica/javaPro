@@ -1,24 +1,14 @@
 package programmers;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        
-        String result = null;
-        switch (n%2) {
-		case 0:
-			result = "even";
-			break;
-
-		case 1:
-			result = "odd";
-			break;
-		} // switch
-        
-        System.out.printf("%d is %s", n, result);
-        
+class Solution {
+    public int[] solution(int[] numbers) {
+        int[] answer = new int[numbers.length];
+        Arrays.fill(answer, 2);
+        for (int i = 0; i < numbers.length; i++) {
+			answer[i] *= numbers[i];
+		} // for i
+        return answer;
     }
 }

@@ -1,0 +1,111 @@
+1.   현재 날짜와 시간 정보를   LocalDateTime 클래스를 사용해서 
+     아래와 같은 형식으로 출력하세요 .     
+     출력 형식 ) 2023/02/28 화요일   12:17:57.356  
+     
+		LocalDateTime d = LocalDateTime.now();
+		String pattern = "yyyy/MM/dd E요일  hh:mm:ss.SSS";
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
+		System.out.println(d.format(dtf));
+
+2.  String s = "2023.02.28 (화)" 문자열을 LocalDate 클래스로 변환시키세요. 
+
+		String pattern = "yyyy.MM.dd (E)";
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
+		LocalDate d = LocalDate.parse(s, dtf);
+
+3. 용어 정리
+  1) 프레임워크( framework ) 정의에 대해서 설명하세요. 
+  	: 표준화된 체계, 틀.
+  2) 컬렉션 프레임워크 정의에 대해서 설명하세요. 
+  	: 객체, 데이터의 집합을 관리하는 표준화된 체계
+  3) 컬렉션 프레임워크의 핵심 인터페이스( 3가지 타입 ) 에 대해서 설명하세요. 
+  	: List, Set, Map 
+  	1) List: 순서 O, 중복 허용 O
+  	2) Set: 순서 X, 중복 허용 X
+  	3) Map: Key와 Value로 이루어져있음. Key는 중복 허용 X, Value는 중복 허용 O
+
+4. ArrayList 컬렉션 클래스를 사용하여 
+  1) 팀원들 이름을 요소로 추가하기
+     (팀원들은 같은 옆 자리의 교육생) 
+  2) 반복자(iteratror)를 사용해서 모든 요소 출력하기      ***
+  3) 팀원 한명을 검색해서 있다면 "홍길동"으로 수정하기
+  4) "홍길동"을 검색해서 있다면 삭제하기. 
+  
+		ArrayList names = new ArrayList();
+		// 팀원들 이름을 요소로 추가하기
+		names.add("이정인");
+		names.add("변상호");
+		
+		// 반복자(iteratror)를 사용해서 모든 요소 출력하기
+		Iterator<String> ir = names.iterator();
+		while (ir.hasNext()) {
+			System.out.println((String) ir.next());
+		}
+		
+		// 팀원 한명을 검색해서 있다면 "홍길동"으로 수정하기
+		int index = -1;
+		if ((index = names.indexOf("이정인")) != -1) {
+			names.set(index, "홍길동");
+		}
+		
+		// "홍길동"을 검색해서 있다면 삭제하기
+		if (names.remove("홍길동"));
+    
+5.  java.time 패키지 클래스 사용. ( LocalDateTime 사용)
+    1) 설문 시작일 25.1.15  09:00:00
+    2) 설문 종료일 25.3.05  09:00:00
+   오늘 현재 설문 가능한여부를 출력하세요. 
+
+		LocalDateTime open = LocalDateTime.of(2025, 1, 15, 9, 0, 0);
+		LocalDateTime close = LocalDateTime.of(2025, 3, 5, 9, 0, 0);
+		LocalDateTime now = LocalDateTime.now();
+		
+		String result = null;
+		if (now.isEqual(open) || now.isEqual(close) || (now.isAfter(open) && now.isBefore(close))) {
+			result = "설문 가능";
+		} else result = "설문 불가능";
+		System.out.println(result);
+  
+6. 이름, 나이 필드를 가진 Person 클래스를 선언하고
+   ArrayList 컬렉션 클래스에  Person 객체를 요소로 추가하고 
+   이름으로 오름차순 정렬해서    출력하는 코딩을 하세요 .. 
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		
+	ArrayList<Person> people = new ArrayList<Person>();
+	// Person 객체 생성
+	Person p1 = new Person("변백현", 30);
+	Person p2 = new Person("김예지", 26);
+	Person p3 = new Person("하상아", 51);
+	// Person 객체를 요소로 추가
+	people.add(p1);
+	people.add(p2);
+	people.add(p3);
+	// 이름으로 오름차순 정렬
+	people.sort((Person o1, Person o2) -> o1.name.compareTo(o2.name));
+	
+	for (Person person : people) {
+		System.out.println(person.name);
+	}
+	
+	} // main
+	
+} // class
+
+class Person {
+	String name;
+	int age;
+
+	public Person() { }
+
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+}
+
+
+
+  
