@@ -67,8 +67,10 @@ public class Ex03 {
 		} while ( Character.toUpperCase(con) == 'Y' );
 		
 		cnt = list.size();
+		
 		// 등수처리
 		procRank(list);
+		
 		// 학생정보출력
 		dispStudent(list);
 		
@@ -87,7 +89,6 @@ public class Ex03 {
 	private static void procRank(ArrayList list) {
 	      for (int i = 0; i < list.size(); i++) {
 	         Student s = (Student) list.get(i);
-	         s.rank = 1;
 	         for (int j = 0; j < list.size(); j++) {
 	            Student t = (Student) list.get(j);
 	            if (s.tot < t.tot) {

@@ -1,0 +1,118 @@
+1. 지금까지 배운 컬렉션 클래스 종류와 특징에 대해서 설명하세요.
+ 
+2. Stack과 Queue에 대해서 설명하세요.
+ 
+2-2. Stack에 사용되는 메서드를 적으세요. 
+  ㄱ. 요소 추가 메서드 :  
+  ㄴ. 마지막 요소 얻어오는 메서드 + 제거O :
+  ㄷ. 마지막 요소 얻어오는 메서드 + 제거X :
+  ㄹ. 요소가 비었는 지 체크하는 메서드 :
+  
+2-3. Queue에 사용되는 메소드를 적으세요.
+  ㄱ. 요소 추가 메서드 :  
+  ㄴ. 마지막 요소 얻어오는 메서드 + 제거O :
+  ㄷ. 마지막 요소 얻어오는 메서드 + 제거X :
+  ㄹ. 요소가 비었는 지 체크하는 메서드 :
+
+3. Deque( Double-Ended Queue ) 에 대해서 특징을 설명하세요.
+
+4. 열거자와 반복자에 대해서 설명하세요 .
+
+5. 게임횟수를 입력받아서 로또번호를 출력하는 코딩을 하세요. 
+  ( 조건 : ArrayList 와 LinkedHashSet 컬렉션 클래스 사용 )
+  ( 조건 : main 메서드 안에 모든 코딩을 하세요. )
+  
+		// 게임 횟수 입력받기
+		Scanner scanner = new Scanner(System.in);
+		System.out.print(">> 게임 횟수 입력: ");
+		int round = scanner.nextInt();
+		
+		// 로또번호 생성
+		ArrayList game = new ArrayList(round);
+		Random random = new Random();
+		for (int i = 0; i < round; i++) {
+			LinkedHashSet lotto = new LinkedHashSet(6);
+			while (lotto.size() <= 6) {
+				int n = random.nextInt(45)+1;
+				lotto.add(n);
+			}
+			game.add(lotto);
+		} // for i
+		
+		// 로또번호 출력
+		for (int i = 0; i < round; i++) {
+			System.out.printf("[%d게임] ", i+1);
+			System.out.println(game.get(i));
+		} // for i
+  
+  
+6. "1차_조편성.txt" 파일을 읽어와서 
+  컬렉션 클래스를 사용하여 
+  아래와 같이 출력하는 코딩을 하세요.  
+  (조건) 각 조원들을 컬렉션 클래스에 저장해서 출력하기.
+  
+  출력형식)
+[1조]
+	A. 권태정
+	B. 김도훈
+	C. 김민선
+	D. 김승효
+
+[2조]
+	A. 김유미
+	B. 김현수
+	C. 박지웅
+	D. 변상호
+	E. 서재웅
+
+[3조]
+	A. 서주원
+	B. 안우혁
+	C. 안준호
+	D. 양재원
+	E. 이정인
+
+[4조]
+	A. 이진욱
+	B. 최승호
+	C. 최인석
+	D. 김예지
+	
+	
+		ArrayList group = new ArrayList(); // 조별로 저장
+		String[] lineArr = null; // 조원들 이름
+		
+		String fileName = ".\\src\\days23\\1차_조편성.txt";
+		String saveFileName = ".\\src\\days23\\1차_조편성.html";
+		
+		try (FileReader reader = new FileReader(fileName);
+			BufferedReader br = new BufferedReader(reader);
+			Writer writer = new FileWriter(saveFileName);) {
+			writer.write("<html><head></head><body>");
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				lineArr = line.split("[/:]"); // (/|:)
+				Queue members = new LinkedList();
+				writer.write("<h3>[");
+				writer.write(lineArr[0]);
+				writer.write("]</h3><ol>");
+				for (int i = 1; i < lineArr.length; i++) {
+					members.add(lineArr[i]);
+				} // for i
+				group.add(members);
+				
+				String name = null;
+				char seq = 'A';
+				while (members.size() != 0) {
+					String s = String.format("<li>%c. %s\n</li>", seq++, members.poll());
+					writer.write(s);
+				}
+				writer.write("</ol>");
+			} // while
+			writer.write("</body></html>");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("end");

@@ -23,7 +23,7 @@ public class Ex05 {
 	public static void main(String[] args) {
 		//
 		Vector v = new Vector();
-		System.out.println(v.capacity()); // 용량: 10
+		System.out.println(v.capacity()); // 용량: 10 
 		System.out.println(v.size()); // 요소 갯수(크기): 0
 		
 		v.addElement("최승호");

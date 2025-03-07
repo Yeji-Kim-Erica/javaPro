@@ -21,7 +21,7 @@ public class Ex07 {
 		 [Stack]
 		 1. java.util 패키지에 있음
 		 2. LIFO 자료구조 (Last In, First Out)
-		 3. push() 요소 추가, pop() 요소 반환 및 삭제, peek() 요소 반환, isEmpty(), search() 인덱스 값 반환 ()
+		 3. push() 요소 추가, pop() 요소 반환 및 삭제, peek() 요소 반환, isEmpty(), search() 인덱스 값 반환
 		 4. Vector 클래스의 자식 클래스
 		 */
 		

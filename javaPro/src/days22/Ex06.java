@@ -16,7 +16,7 @@ package days22;
  			LinkedList -> 비연속적이라는 것이 특징이다.
  							ㄴ 이로 인해 다음 요소의 주소를 가지고 있다
  								ㄴ 이로 인해 데이터의 삽입과 삭제가 자유롭다
- 			 ㄴ 선생님 그림 참고
+ 								
  			=> 잦은 삽입과 삭제가 필요할 때 LinkedList 이용
  *
  *           다음요소주소저장
@@ -86,5 +86,5 @@ public class Ex06 {
 // 단방향 링크드 리스트
 class Node {
 	int value = 0;
-	Node next = null; // 노드의 부소를 저장할 참조변수
+	Node next = null; // 노드의 주소를 저장할 참조변수
 }
