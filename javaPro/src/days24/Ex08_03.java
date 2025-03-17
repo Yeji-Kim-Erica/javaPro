@@ -26,9 +26,13 @@ public class Ex08_03 {
 class Box2<T> {
 	// Cannot make a static reference to the non-static type T
 	// static T item;
-	
-	T [] itemArr;
-	
-	// 강사님 자료보고 채우기
+	T item;
+	T [] itemArr; // T 타입의 배열은 선언할 수 있다.
+	int compare(T t1, T t2) {
+		return 0;
+	}
+//	static int compare(T t1, T t2) {
+//		return 0;
+//	}
 	
 }

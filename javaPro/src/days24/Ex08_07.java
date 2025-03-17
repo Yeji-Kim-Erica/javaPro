@@ -18,7 +18,7 @@ public class Ex08_07 {
 		ArrayList list = new ArrayList();
 		// ArrayList<Object> list = new ArrayList<>(); (같은 의미)
 		
-		// 강사님 자료 보고 추가
+		ArrayList<Integer> list2 = new ArrayList();
 		
 	} // main
 	

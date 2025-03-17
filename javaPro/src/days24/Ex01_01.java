@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -18,12 +20,12 @@ public class Ex01_01 {
 
 	public static void main(String[] args) {
 
-		LinkedHashMap<Character, ArrayList<String>> words = new LinkedHashMap<>();
+		LinkedHashMap<Character, LinkedHashSet<String>> words = new LinkedHashMap<>();
 		for (int i = 'A'; i <= 'z'; i++) {
 			if (Character.isUpperCase(i))
-				words.put((char) i, new ArrayList<String>());
+				words.put((char) i, new LinkedHashSet<String>());
 			else if (Character.isLowerCase(i))
-				words.put((char) i, new ArrayList<String>());
+				words.put((char) i, new LinkedHashSet<String>());
 		} // for i
 
 		String fileName = ".\\src\\days18\\Ex10.java";
@@ -32,30 +34,33 @@ public class Ex01_01 {
 
 		try (FileReader reader = new FileReader(fileName); BufferedReader br = new BufferedReader(reader)) {
 			while ((line = br.readLine()) != null) {
-					lineArr = line.split("\\W+|\\d+");
-					for (int i = 0; i < lineArr.length; i++) {
-						if (!(lineArr[i]).equals("")) {
-							char first = lineArr[i].charAt(0);
-							if (Character.isAlphabetic(first)) {
-								words.get(first).add(lineArr[i]);
-							}
+				lineArr = line.split("\\W+|\\d+|_+");
+				for (int i = 0; i < lineArr.length; i++) {
+					if (!(lineArr[i]).equals("")) {
+						char first = lineArr[i].charAt(0);
+						if (Character.isAlphabetic(first)) {
+							words.get(first).add(lineArr[i]);
 						}
-					} // for i
+					}
+				} // for i
 			} // while
 		} catch (Exception e) {
 			e.printStackTrace();
 		} // try~catch
 
-		Set<Entry<Character, ArrayList<String>>> es = words.entrySet();
-		Iterator<Entry<Character, ArrayList<String>>> eir = es.iterator();
+		Set<Entry<Character, LinkedHashSet<String>>> es = words.entrySet();
+		Iterator<Entry<Character, LinkedHashSet<String>>> eir = es.iterator();
 		while (eir.hasNext()) {
-			Entry<Character, ArrayList<String>> entry = eir.next();
+			Entry<Character, LinkedHashSet<String>> entry = eir.next();
 			char key = entry.getKey();
-			ArrayList<String> value = entry.getValue();
+			LinkedHashSet<String> value = entry.getValue();
 			System.out.printf("[%c로 시작하는 단어 -%d개]\n", key, value.size());
-			for (int i = 0; i < value.size(); i++) {
-				System.out.printf("\t%d. %s\n", i + 1, value.get(i));
-			} // for i
+			Iterator<String> hsir = value.iterator();
+			int no = 1;
+			while (hsir.hasNext()) {
+				String word = hsir.next();
+				System.out.printf("\t%d. %s\n", no++, word);
+			}
 			System.out.println("=".repeat(50));
 		}
 		

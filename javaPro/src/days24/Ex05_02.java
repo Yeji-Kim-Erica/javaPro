@@ -13,7 +13,7 @@ import java.util.Properties;
  * @content
  */
 public class Ex05_02 {
-
+	
 	public static void main(String[] args) {
 		Properties p = new Properties();
 		System.out.println(p); // {}

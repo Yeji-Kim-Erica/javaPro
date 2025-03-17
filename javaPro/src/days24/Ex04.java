@@ -9,9 +9,7 @@ import java.util.Properties;
  * @subject
  * @content
  * 
- 	[Map의 종류]
- 	- Hashtable (구) 동기화 O
-	- HashMap (신) 동기화 X
+ 	[Map의 종류] 
 	- LinkedHashMap
 	- TreeMap
 	- Properties 컬렉션 클래스

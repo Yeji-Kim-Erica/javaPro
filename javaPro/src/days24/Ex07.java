@@ -68,7 +68,6 @@ public class Ex07 {
 		// 복사
 		// Collections.copy(list, ???);
 		
-		// 강사님 페이지와 비교
 		
 	} // main
 	

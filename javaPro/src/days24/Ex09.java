@@ -13,8 +13,7 @@ import java.util.Arrays;
  	  ㄴ 선언 방법
  		enum 열거형이름 {상수명, 상수명, ...}
  	  ㄴ 사용방법
- 	  	강사님 자료 보고 추가..
- 	  ㄴ
+ 	  	열거형이름.상수명
  	
  */
 public class Ex09 {
